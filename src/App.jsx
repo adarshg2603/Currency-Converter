@@ -10,6 +10,16 @@ function App() {
 
   const currencyInfo = useCurrencyInfo(from);
   const options = Object.keys(currencyInfo);
+  const [date, setDate] = useState("");
+
+  //Date feature
+//  fetch(`/time`)
+//     .then((res) => res.json())
+//     .then(data => {
+//         // console.log(data.serverTime);
+//         setDate(data.serverTime);
+//     }
+//     )
 
   const swap = () => {
     const temp = from;
@@ -37,6 +47,7 @@ function App() {
                 backgroundImage: `url('${BackgroundImage}')`,
             }}
         >
+          <div>DATE: {date}</div>
             <div className="w-full">
                 <div className="w-full max-w-md mx-auto  border-white rounded-lg p-5 backdrop-blur-sm bg-white/30">
                     <form
